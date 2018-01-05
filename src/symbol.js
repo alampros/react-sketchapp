@@ -81,6 +81,10 @@ export const injectSymbols = () => {
     .documentData()
     .symbolsPageOrCreateIfNecessary();
 
+  if (mastersNameRegistry === null) {
+    getExistingSymbols();
+  }
+
   let left = 0;
   Object.keys(mastersNameRegistry).forEach((key) => {
     const symbolMaster = mastersNameRegistry[key];
